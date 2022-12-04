@@ -22,7 +22,7 @@ const toCreate = () => {
 
 <style lang="scss" scoped>
 .create-content {
-    height: calc(100% - 60px);
+    height: calc(#{$height-100} - #{$header-h});
     background: #F5F5F7;
     .content {
         position: relative;

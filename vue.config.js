@@ -9,19 +9,16 @@ module.exports = defineConfig({
       }
     }
   },
-  // pluginOptions: {
-  //   'style-resources-loader': {
-  //     preProcessor: 'scss',
-  //     patterns: []
-  //   }
-  // },
-  css: {
-    loaderOptions: {
-      sass: {
-        additionalData: `
-          @import "./src/assets/styles/base.scss";
-        `,
-      }
-    }
-  },
+  chainWebpack(config){
+    const oneOfsMap = config.module.rule('scss').oneOfs.store
+    oneOfsMap.forEach((item) => {
+      item
+        .use('sass-resources-loader')
+        .loader('sass-resources-loader')
+        .options({
+          resources: './src/assets/styles/common.scss'  //相对路径
+        })
+        .end()
+    })
+  }
 })

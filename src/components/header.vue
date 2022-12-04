@@ -48,7 +48,7 @@ const toSignOut = () => {
 <style lang="scss" scoped>
 .header {
     width: 100%;
-    height: 60px;
+    height: $header-h;
     padding: 9px 0;
     box-sizing: border-box;
     .left {

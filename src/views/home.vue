@@ -24,7 +24,7 @@ const handleClick = () => {
 <style lang="scss" scoped>
 .home-content {
     background: #EFE8D7;
-    height: calc(100% - 60px);
+    height: calc(#{$height-100} - #{$header-h});
     position: relative;
     .home-left {
         padding-left: 130px;
